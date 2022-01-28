@@ -1,27 +1,20 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { useGlobalContext } from "../../context";
-import api from '../../services/request';
-
+import ListCard from "../../components/ListCard/";
+import * as S from "./styled"
 const Home = () => {
-    const { user, setUser } = useGlobalContext()
-    const [State, setState] = useState<any>([])
-    useEffect(() => {
+    const { setUser } = useGlobalContext()
 
-        async function any() {
-            console.log(await api.message())
-
-        }
-        any()
-    }, [])
-    console.log(State)
     return (<div>
         <input type="text" onChange={event => setUser(event.target.value)} />
-        <br />
 
-        <br />
-        {user}
+        <S.ListMoview>
+            <ListCard />
+        </S.ListMoview>
+
+
     </div>)
 };
 
