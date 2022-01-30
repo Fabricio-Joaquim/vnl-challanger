@@ -3,8 +3,21 @@ import { apiMovies } from "./index"
 // eslint-disable-next-line import/no-anonymous-default-export
 export default
     {
-        async message() {
-            const x = apiMovies.get(`popular?api_key=${process.env.REACT_APP_SECRET_NAME}&language=en-US&page=1`).then(({ data }: any) => data)
+        async getListMovies(page?:number, ) {
+            const x = apiMovies.get(`movie/popular?api_key=${process.env.REACT_APP_SECRET_NAME}&language=pt-br&page=3`).then(({ data }: any) => data)
             return x
-        }
+        },
+
+        async getDescriptionMovie(id: number) {
+            const x = apiMovies.get(`movie/${id}?api_key=${process.env.REACT_APP_SECRET_NAME}&language=pt-br`).then(({ data }: any) => data)
+            return x
+        },
+        async SearchMovie(query: string) {
+            const x = apiMovies.get(`search/movie?api_key=${process.env.REACT_APP_SECRET_NAME}&&query=${query}`).then(({ data }: any) => data)
+            return x
+        },
+
     }
+//    https://api.themoviedb.org/3/search/movie?api_key=0b012c3aeefb1c84ff39f9bf739763fa&query=
+//https://api.themoviedb.org/3/search/movie?api_key=0b012c3aeefb1c84ff39f9bf739763fa&query=homem
+    //https://api.themoviedb.org/3/movie/{movie_id}?api_key=<<api_key>>&language=en-US

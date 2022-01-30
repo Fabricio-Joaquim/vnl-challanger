@@ -14,6 +14,7 @@ display: flex;
 border: 4px solid gray;
 border-radius: 24px;
 margin-top: 3vh;
+cursor: pointer;
 /* 
 div{
     display: flex;

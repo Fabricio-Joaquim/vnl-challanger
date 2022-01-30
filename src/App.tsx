@@ -4,13 +4,14 @@ import { ContextProvider } from './context';
 import Home from "./screen/home/index"
 import theme from "./style"
 import { Reset } from 'styled-reset'
+import { Routers } from './Router';
 
 function App() {
   return (
     <ContextProvider>
       <ThemeProvider theme={theme}>
         <Reset />
-        <Home />
+        <Routers />
       </ThemeProvider>
     </ContextProvider>
 
