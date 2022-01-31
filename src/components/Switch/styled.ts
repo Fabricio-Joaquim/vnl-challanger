@@ -1,9 +1,5 @@
 import styled from "styled-components";
-import { FaMoon } from "react-icons/fa"
-
-export const Moon = styled(FaMoon)`
-align-self:center;
-`;
+import { BsMoon } from "react-icons/bs";
 
 export const Slider = styled.span`
 position: absolute;
@@ -33,6 +29,7 @@ border-radius: 50%;
 `;
 
 export const Switch = styled.label`
+  right: 0;
     position: relative;
     display: inline-block;
     width: 60px;
@@ -42,9 +39,9 @@ export const Switch = styled.label`
             width: 0;
             height: 0;
             :checked +${Slider}{
-                background-color: #2196F3;
+                background-color: gray;
                 :focus +${Slider}{
-                     box-shadow: 0 0 1px #2196F3;
+                     box-shadow: 0 0 1px gray;
                 }
             }
             :checked  +${Slider}:before {
@@ -55,47 +52,6 @@ export const Switch = styled.label`
         }
 `;
 
-
-export const CheckBoxWrapper = styled.div`
-  position: relative;
-`;
-export const CheckBoxLabel = styled.label`
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 42px;
-  height: 26px;
-  border-radius: 15px;
-  background: #bebebe;
-  cursor: pointer;
-  &::after {
-    content: "";
-    display: block;
-    border-radius: 50%;
-    width: 18px;
-    height: 18px;
-    margin: 3px;
-    background: #ffffff;
-    box-shadow: 1px 3px 3px 1px rgba(0, 0, 0, 0.2);
-    transition: 0.2s;
-  }
-`;
-export const CheckBox = styled.input`
-  opacity: 0;
-  z-index: 1;
-  border-radius: 15px;
-  width: 42px;
-  height: 26px;
-  &:checked + ${CheckBoxLabel} {
-    background: #4fbe79;
-    &::after {
-      content: "";
-      display: block;
-      border-radius: 50%;
-      width: 18px;
-      height: 18px;
-      margin-left: 21px;
-      transition: 0.2s;
-    }
-  }
+export const Moon = styled(BsMoon)`
+    margin-left: 15px;
 `;

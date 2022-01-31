@@ -1,13 +1,10 @@
 import { DefaultTheme } from "styled-components";
 const theme: DefaultTheme = {
     colors: {
-        bgwhite: "#FFFDF9",
-        persianGreen: "#06B49A",
-        lightBlue: "#AFDBD2",
-        bgdark: "#363636",
-        onyx: "#36313D"
+        backgoround: "#fff",
+        secundary: "#36313D"
     },
-    fonts: ["sans-serif", "Roboto"],
+    fonts: ["Roboto","sans-serif"],
     fontSizes: {
         small: "1em",
         medium: "2em",

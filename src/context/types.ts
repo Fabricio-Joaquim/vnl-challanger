@@ -18,5 +18,10 @@ export interface IContext {
     DarkMode?: boolean;
     ListMovies?: IListMovies[],
     handleBG?: () => void,
-    handleSearch?:(ev:any)=>any
+    handleSearch?:(ev:any)=>any,
+    Page?:number,
+    setPage?:any,
+    handlePage?:any
+    MaxPage?: number
+    Search?:string
 }

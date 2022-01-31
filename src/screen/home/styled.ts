@@ -1,8 +1,5 @@
 import styled from "styled-components";
-
-interface dark {
-    DarkMode:boolean
-}
+// import { Pagination } from '@mui/material';
 
 export const ListMoview = styled.div`
     margin-top: 5vh;
@@ -13,6 +10,6 @@ export const ListMoview = styled.div`
     align-items: center;
 `;
 
-export const Main = styled.div<dark>`
-background-color: ${props => props.DarkMode ? props.theme.colors.bgdark : props.theme.colors.bgwhite};
-`
+export const Main = styled.div`
+/*     background-color: ${props=>props.theme.colors.backgoround};
+ */`;

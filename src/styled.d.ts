@@ -5,11 +5,9 @@ import 'styled-components';
 declare module 'styled-components' {
     export interface DefaultTheme {
         colors: {
-            bgwhite: string,
-            bgdark: string,
-            persianGreen: string,
-            lightBlue: string,
-            onyx: string
+            backgoround: string,
+            secundary: string,
+           
         },
         fonts: string[],
         fontSizes: {

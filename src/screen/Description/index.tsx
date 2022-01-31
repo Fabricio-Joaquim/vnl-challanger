@@ -6,6 +6,7 @@ import MoviesRequest from '../../services/MoviesRequest'
 import { MdArrowBack } from "react-icons/md"
 import {IDescription} from "./types"
 import {newDate} from "../../util/functions"
+import * as S from "./styled"
 const Description = () => {
     const {id} = useParams()
     const [Descript, setDescript] =  useState<IDescription>({})
@@ -16,18 +17,38 @@ const Description = () => {
         a()
     },[])
     return (
-    <div style={{display:"flex", flexDirection:"column"}}>
-        <div style={{display:"flex", flexDirection:"column", cursor:"pointer"}}>
-        <MdArrowBack size={50} onClick={()=>history.back()}/>
-        Volta
-        </div>
-        {<a href={Descript.homepage}> 
+        <S.Mainwrapper>
+            <S.Back>
+                <MdArrowBack size={50} onClick={()=>history.back()}/>
+            </S.Back>
+        <S.Subwrapper>
+        <h2>
+            {Descript.title}
+            </h2>
+            <img src={Descript.backdrop_path}/>
+            {<a href={Descript.homepage}> 
             Página Oficial
         </a> 
             }
-{ newDate(Descript.release_date)  }
- Genero: {Descript.genres?.map((item)=>item?.name) }
-    </div>
+            <p>
+            <span>Data de Lançamento:</span><br/>{ newDate(Descript.release_date)  }
+            </p>
+            <br/>
+            <p>
+            <span>
+                Gêneros:<br/>
+            </span> {Descript.genres?.map((item,index)=> Descript.genres.length!=index+1? item?.name+", ":item?.name+"") }
+            </p>
+            <br/>
+            <p>
+         <span>
+             Sinopse:
+            </span>   
+             <br/>{Descript.overview}
+            </p>
+
+</S.Subwrapper>
+    </S.Mainwrapper>
     );
 };
 
