@@ -3,18 +3,19 @@ import { useGlobalContext } from "../../context";
 import ListCard from "../../components/ListCard/";
 import * as S from "./styled"
 import NavBar from "../../components/NavBar"
-import { Pagination } from '@mui/material';
 
 const Home = () => {
-    const { Page, handlePage, MaxPage } = useGlobalContext()
+    const { Page, handlePage, MaxPage, Search, Render } = useGlobalContext()
     return (
         <S.Main> 
             <NavBar/>
-            <Pagination size='large' page={Page} count={MaxPage} style={{justifyContent:"center", display:"flex"}} onChange={handlePage}/>
+                {Render?"Busca por  : "+Search:""}
+            <S.MyPagination size='large' page={Page} count={MaxPage} onChange={handlePage}/>
             <S.ListMoview>
                 <ListCard />
             </S.ListMoview>
-        </S.Main>)
+        </S.Main>
+        )
 };
 
 export default Home

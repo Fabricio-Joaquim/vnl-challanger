@@ -5,7 +5,6 @@ export const SwitchButton = () => {
 
     const { handleBG, DarkMode } = useGlobalContext()
 
-
     return (<>
     <div style={{flexDirection:"row", display:"flex", marginLeft: "auto"}}>
         <Switch>

@@ -15,13 +15,13 @@ const ListCard = () => {
                         <S.Descriscao>
                            <span>Pontuação:</span>
                            {item.vote_average}<br/>
-                            
                             Nome: {item.title}<br/>
                             Popularidade: {item.popularity} pontos<br/>
                         </S.Descriscao>
                     </S.Item>    
                     </S.Mainwrapper>
-                    </S.MyLink> )
+                    </S.MyLink>
+                )
             }
         </>
     )

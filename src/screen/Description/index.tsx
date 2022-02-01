@@ -7,6 +7,7 @@ import { MdArrowBack } from "react-icons/md"
 import {IDescription} from "./types"
 import {newDate} from "../../util/functions"
 import * as S from "./styled"
+import Switch from '../../components/Switch'
 const Description = () => {
     const {id} = useParams()
     const [Descript, setDescript] =  useState<IDescription>({})
@@ -18,9 +19,12 @@ const Description = () => {
     },[])
     return (
         <S.Mainwrapper>
+            <S.Bar>
             <S.Back>
                 <MdArrowBack size={50} onClick={()=>history.back()}/>
             </S.Back>
+            <Switch/>
+            </S.Bar>
         <S.Subwrapper>
         <h2>
             {Descript.title}
@@ -31,7 +35,7 @@ const Description = () => {
         </a> 
             }
             <p>
-            <span>Data de Lançamento:</span><br/>{ newDate(Descript.release_date)  }
+            <span>Data de Lançamento:</span><br/>{ newDate(Descript.release_date)}
             </p>
             <br/>
             <p>

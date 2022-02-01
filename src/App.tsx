@@ -1,29 +1,23 @@
 import React from 'react';
-import styled, { ThemeProvider } from "styled-components";
-import { ContextProvider } from './context';
-import theme from "./style"
+import { ThemeProvider } from "styled-components";
+import Theme from "./styles"
 import { Reset } from 'styled-reset'
 import { Routers } from './Router';
 import Global from "./styles/global"
+import { useGlobalContext } from './context';
+import {Themee} from "./styles/styled"
 function App() {
 
-  const Themee = styled.div`
-    background-color: ${props => props.theme.colors.backgoround};
-    min-height: 100vh;
-    font-family: ${props=>props.theme.fonts[0]};
-  `
+  const {DarkMode} = useGlobalContext()
 
   return (
-    <ContextProvider>
-      <ThemeProvider theme={theme}>   
-        <Reset />
+    <ThemeProvider theme={DarkMode?Theme.dark:Theme.light}>   
+      <Reset />
         <Global/>
         <Themee>
-        <Routers />
+          <Routers />
         </Themee>
-      </ThemeProvider>
-    </ContextProvider>
-
+    </ThemeProvider>
   );
 }
 

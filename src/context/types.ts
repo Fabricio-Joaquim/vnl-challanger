@@ -1,4 +1,3 @@
-import { Dispatch, InputHTMLAttributes, SetStateAction } from "react";
 export interface IListMovies {
     adult: boolean,
     id: number,
@@ -24,4 +23,6 @@ export interface IContext {
     handlePage?:any
     MaxPage?: number
     Search?:string
+    buttonClick?: ()=>void
+    Render?: boolean
 }

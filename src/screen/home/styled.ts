@@ -1,5 +1,5 @@
 import styled from "styled-components";
-// import { Pagination } from '@mui/material';
+import { Pagination } from '@mui/material';
 
 export const ListMoview = styled.div`
     margin-top: 5vh;
@@ -11,5 +11,12 @@ export const ListMoview = styled.div`
 `;
 
 export const Main = styled.div`
-/*     background-color: ${props=>props.theme.colors.backgoround};
- */`;
+
+`;
+
+
+export const MyPagination = styled(Pagination)`
+    justify-content: center;
+    display:flex;
+    color:white;
+`;

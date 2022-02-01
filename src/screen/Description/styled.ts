@@ -29,6 +29,8 @@ export const Back = styled.div`
 export const Subwrapper = styled.section`
 
     img{
+        background-repeat: no-repeat;
+        
         height: 70%;
         width: 50%;
         margin: 0 auto;
@@ -39,7 +41,11 @@ export const Subwrapper = styled.section`
             width: 90%;
         }
     }
+`;
 
-    
-
+export const Bar = styled.div`
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+    margin-top:2rem;
 `;
