@@ -39,7 +39,7 @@ export const Switch = styled.label`
             width: 0;
             height: 0;
             :checked +${Slider}{
-                background-color: gray;
+                background-color: black;
                 :focus +${Slider}{
                      box-shadow: 0 0 1px gray;
                 }
@@ -54,4 +54,13 @@ export const Switch = styled.label`
 
 export const Moon = styled(BsMoon)`
     margin-left: 15px;
+`;
+
+export const Mainwrapper = styled.div`
+    flex-direction:row;
+    display:flex;
+    margin-left: auto;
+    @media (max-width:786px) {
+        margin-top: 10px;
+    }
 `;

@@ -32,7 +32,7 @@ export const Subwrapper = styled.section`
         background-repeat: no-repeat;
         
         height: 70%;
-        width: 50%;
+        width: 60%;
         margin: 0 auto;
         display: flex;
         border-radius: 20px;

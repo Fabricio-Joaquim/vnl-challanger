@@ -11,12 +11,13 @@ const ListCard = () => {
                 <S.MyLink to={`Description/${item.id}`} key={item.id}>
                     <S.Mainwrapper  img={item.poster_path}>
                     <S.Item>
-                        <p>Ver mais</p>
+                        <p></p>
                         <S.Descriscao>
-                           <span>Pontuação:</span>
-                           {item.vote_average}<br/>
-                            Nome: {item.title}<br/>
-                            Popularidade: {item.popularity} pontos<br/>
+                            <span>Título:</span> {item.title.toUpperCase()}
+                            <span>Pontuação:</span>{item.vote_average}
+                            <span>Popularidade:</span> {item.popularity} pontos
+                            <span>Sinopse:</span>
+                            <section>{item.overview || "Sinopse não disponível"}</section>
                         </S.Descriscao>
                     </S.Item>    
                     </S.Mainwrapper>

@@ -12,13 +12,13 @@ const NavBar = () => {
           <S.Logo onClick={home}>
             HOME
           </S.Logo>
-          <div>
+          <S.SubWrapper>
             <S.Input type="text"
               value={Search}
               placeholder="Buscar por título"
               onChange={handleSearch}/>
             <S.Button onClick={buttonClick}>Buscar</S.Button>
-          </div>
+          </S.SubWrapper>
           <SwitchButton />
         </S.Mainwrapper>
       </nav>

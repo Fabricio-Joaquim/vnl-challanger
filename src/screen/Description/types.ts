@@ -17,5 +17,6 @@ export interface IDescription {
     title?: string,
     vote_average?: number,
     vote_count?: number,
+    spoken_languages?:[{name:string}]
 
 }

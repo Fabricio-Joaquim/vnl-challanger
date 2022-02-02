@@ -9,6 +9,9 @@ export const Mainwrapper = styled.div`
     grid-template-columns: repeat(3, 1fr);
     @media (max-width:786px) {
         display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
 `;
 
@@ -41,3 +44,7 @@ export const Logo = styled.h3`
     font-size: ${props => props.theme.fontSizes.large};
     font-weight: bold;
 `;
+
+export const SubWrapper = styled.div`
+display: flex;
+`

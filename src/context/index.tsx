@@ -11,14 +11,23 @@ export const ContextProvider = (props: any) => {
   const [ListMovies, setListMovies] = useState<IListMovies[]>([])
   const [Page, setPage] = useState(1)
   const [Render, setRender] = useState(false)
+  const [click, setClick]= useState(false)
   const [Search, setSearch] = useState("")
   const [MaxPage, setMaxPage]= useState(500);
-  const handleBG = () => setDarkMode(!DarkMode)
+  
+  const handleBG = () => {setDarkMode(!DarkMode); setClick(true)}
   const handleSearch = (event:ChangeEvent<HTMLInputElement>)=>setSearch(event.target.value)
   const handlePage = (_: any,value: React.SetStateAction<number>)=>setPage(value)
-  const buttonClick = ()=>{ setRender(true);SearchMovie(Search, Page).then((arr:any)=>{setListMovies(arr[0]); setMaxPage(arr[1])})}
+  const buttonClick = ()=>{ 
+    setRender(true);
+    SearchMovie(Search, Page)
+    .then((arr:any)=>{
+      setListMovies(arr[0]); 
+      setMaxPage(arr[1])
+    })
+  }
   
-  async function any() {
+  async function anyMovie() {
     const { results } = await apiMovie.getListMovies(Page)
     let aux: any = []
     results.map((item: IListMovies) =>
@@ -31,11 +40,25 @@ export const ContextProvider = (props: any) => {
   
   useEffect(() => {
     if(!Render){
-      any()
+      anyMovie()
     }else{
       SearchMovie(Search, Page).then((arr:any)=>{setListMovies(arr[0]); setPage(1)})
     }
   }, [Page, Render]);
+
+  useEffect(()=>{
+    const local = JSON.parse(localStorage.getItem("theme"))
+    if(local!==null){
+      setDarkMode(local)
+    }else{
+      localStorage.setItem("theme",JSON.stringify(false))
+    }
+    if(click){
+      localStorage.setItem("theme",JSON.stringify(DarkMode))
+      setClick(false)
+    }
+    
+  },[DarkMode])
 
   return (
     <Context.Provider value={{ 
