@@ -15,6 +15,7 @@ const NavBar = () => {
           <S.SubWrapper>
             <S.Input type="text"
               value={Search}
+              alt="digite para encontrar um filme"
               placeholder="Buscar por título"
               onChange={handleSearch}/>
             <S.Button onClick={buttonClick}>Buscar</S.Button>

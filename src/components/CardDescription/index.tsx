@@ -11,25 +11,25 @@ const CardDescription = ({ Description }: AppProps) => {
         <>
             <S.Head>
                 <h2> {Description.title}</h2>
-                <img src={Description.backdrop_path} alt="" />
+                <img src={Description.backdrop_path} alt="" loading='lazy'/>
                 <p>{Description.tagline}</p>
             </S.Head>
             <S.TextDescription>
                 <S.SubDescription>
                     <div>
-                        <span>Link:</span>{<a href={Description.homepage}> Página Oficial</a>}
+                        <span>Página Oficial:</span>{<a href={Description.homepage}>Link</a>}
                     </div>
                     <div>
                         <span>Data de Lançamento: </span><p> {newDate(Description.release_date)}</p>
                     </div>
                     <div>
-                        <span>Gênero: </span><p> {Description.genres?.map((item, index) => Description.genres.length != index + 1 ? item?.name + ", " : item?.name + "")}</p>
+                        <span>Gênero: </span><p> {Description.genres?.map((item, index) => Description.genres.length !== index + 1 ? item?.name + ", " : item?.name + "")}</p>
                     </div>
                     <div>
                         <span>Número de Votos: </span>{<p>{Description.vote_count}</p>}
                     </div>
                     <div>
-                        <span>Idiomas: </span><p> {Description?.spoken_languages?.map((item, index) => Description?.spoken_languages.length != index + 1 ? item?.name + ", " : item?.name + "")}</p>
+                        <span>Idiomas: </span><p> {Description?.spoken_languages?.map((item, index) => Description?.spoken_languages.length !== index + 1 ? item?.name + ", " : item?.name + "")}</p>
                     </div>
                     <div>
                         <span>Média de Votos: </span>{<p>{Description.vote_average}</p>}

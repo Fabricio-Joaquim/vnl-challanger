@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState, ChangeEvent } from "react";
 import MoviesRequest from "../services/MoviesRequest";
 import apiMovie from '../services/MoviesRequest';
@@ -22,6 +23,7 @@ export const ContextProvider = (props: any) => {
     setRender(true);
     SearchMovie(Search, Page)
     .then((arr:any)=>{
+      setPage(1)
       setListMovies(arr[0]); 
       setMaxPage(arr[1])
     })
@@ -42,10 +44,9 @@ export const ContextProvider = (props: any) => {
     if(!Render){
       anyMovie()
     }else{
-      SearchMovie(Search, Page).then((arr:any)=>{setListMovies(arr[0]); setPage(1)})
+      SearchMovie(Search, Page).then((arr:any)=>setListMovies(arr[0]))
     }
   }, [Page, Render]);
-
   useEffect(()=>{
     const local = JSON.parse(localStorage.getItem("theme"))
     if(local!==null){

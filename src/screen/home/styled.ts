@@ -1,4 +1,3 @@
-import { Button } from './../../components/NavBar/style';
 import styled from "styled-components";
 import { Pagination } from '@mui/material';
 
@@ -20,6 +19,13 @@ export const MyPagination = styled(Pagination)`
     justify-content: center;
     display:flex;
     color:white;
+    .Mui-selected{
+        background-color:   green !important;
+        border: 2px solid ${props => props.theme.colors.secundary} ;
+        color: ${props => props.theme.colors.secundary} !important;
+        button{
+        }
+    }
     .MuiPagination-ul{
         button{
             background-color: ${props => props.theme.colors.secundary};

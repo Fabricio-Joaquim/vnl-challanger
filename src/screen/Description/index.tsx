@@ -1,5 +1,3 @@
-/*eslint-disable*/
-
 import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import MoviesRequest from '../../services/MoviesRequest'
@@ -16,12 +14,15 @@ const Description = () => {
             setDescript(await MoviesRequest.getDescriptionMovie(Number(id)))
         }
         a()
-    }, [])
+    }, [id])
+
     return (
         <S.Mainwrapper>
             <S.Bar>
                 <S.Back>
-                    <MdArrowBack size={50} onClick={() => history.back()} />
+                    <S.Links to="/">
+                    <MdArrowBack size={50} />
+                    </S.Links>
                 </S.Back>
                 <Switch />
             </S.Bar>

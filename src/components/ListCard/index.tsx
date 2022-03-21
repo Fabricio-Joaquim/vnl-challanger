@@ -13,7 +13,7 @@ const ListCard = () => {
                     <S.Item>
                         <p></p>
                         <S.Descriscao>
-                            <span>Título:</span> {item.title.toUpperCase()}
+                            <span>Título:</span> {item.title}
                             <span>Pontuação:</span>{item.vote_average}
                             <span>Popularidade:</span> {item.popularity} pontos
                             <span>Sinopse:</span>

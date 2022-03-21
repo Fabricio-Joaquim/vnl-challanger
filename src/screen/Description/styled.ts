@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import { Link } from 'react-router-dom'
 
 export const Mainwrapper = styled.div`
     display:flex;
@@ -6,12 +7,12 @@ export const Mainwrapper = styled.div`
 
     text-align: center;
     span{
-        font-family: ${props=> props.theme.fonts[0]};
-        font-size: ${props=>props.theme.fontSizes.medium};
+        font-family: ${props => props.theme.fonts[0]};
+        font-size: ${props => props.theme.fontSizes.medium};
     }
     p{
-        font-family: ${props=> props.theme.fonts[0]};
-        font-size: ${props=>props.theme.fontSizes.small};
+        font-family: ${props => props.theme.fonts[0]};
+        font-size: ${props => props.theme.fontSizes.small};
     }
     h2{
         font-size: ${props => props.theme.fontSizes.large};
@@ -49,3 +50,7 @@ export const Bar = styled.div`
     align-items:center;
     margin-top:2rem;
 `;
+
+export const Links = styled(Link)`
+    text-decoration: none;
+`
